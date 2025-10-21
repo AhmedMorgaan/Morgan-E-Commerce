@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:morgan_e_commerce/core/config/routes/app_routes.dart';
 import 'package:morgan_e_commerce/features/splash/view/splash_screen.dart';
@@ -6,8 +7,22 @@ import 'core/config/theme/light_theme.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  // ...
+  // Needs to be called so that we can await for EasyLocalization.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await EasyLocalization.ensureInitialized();
+  runApp(EasyLocalization(
+      saveLocale: true,
+      useOnlyLangCode: true,
+      supportedLocales: [
+        Locale('en', 'US'),
+        Locale('ar', 'EG'),
+      ],
+      path:'assets/translations',
+      fallbackLocale: Locale('en', 'US'),
+      child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -16,14 +31,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Morgan E-Commerce',
-      navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       theme: lightTheme(),
-      initialRoute: SplashScreen.route,
-      routes: AppRoutes.routes,
+      routerConfig: AppRoutes.goRoutes,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
     );
   }
 }
-
