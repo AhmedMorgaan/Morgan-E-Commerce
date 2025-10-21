@@ -2,13 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:morgan_e_commerce/features/onboarding/view/on_boarding_screen.dart';
 import 'package:morgan_e_commerce/resources/resources.dart';
 
-
-
 class SplashScreen extends StatefulWidget {
-  static final route = "/splash";
+  static final route = "/splashScreen";
   const SplashScreen({super.key});
 
   @override
@@ -16,16 +15,12 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     super.initState();
-    Timer(
-      Duration(seconds: 3),
-          () {
-        Navigator.pushReplacementNamed(context, OnBoardingScreen.route);
-          }
-    );
+    Timer(Duration(seconds: 3), () {
+      context.replace(OnBoardingScreen.route);
+    });
   }
 
   @override
