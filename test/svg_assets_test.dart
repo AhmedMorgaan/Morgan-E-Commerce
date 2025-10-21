@@ -6,6 +6,10 @@ import 'package:morgan_e_commerce/resources/resources.dart';
 void main() {
   test('svg_assets assets test', () {
     expect(File(SvgAssets.fruitBasket).existsSync(), isTrue);
+    expect(File(SvgAssets.onBoardingBackgroundImage1).existsSync(), isTrue);
+    expect(File(SvgAssets.onBoardingBackgroundImage2).existsSync(), isTrue);
+    expect(File(SvgAssets.onBoardingImage1).existsSync(), isTrue);
+    expect(File(SvgAssets.onBoardingImage2).existsSync(), isTrue);
     expect(File(SvgAssets.splashBottom).existsSync(), isTrue);
     expect(File(SvgAssets.splashLogo).existsSync(), isTrue);
     expect(File(SvgAssets.splashPlant).existsSync(), isTrue);
