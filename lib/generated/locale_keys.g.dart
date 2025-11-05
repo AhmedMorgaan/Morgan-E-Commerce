@@ -4,5 +4,13 @@
 
 abstract class  LocaleKeys {
   static const welcome_to = 'welcome_to';
+  static const on_boarding_item_title_2 = 'on_boarding_item_title_2';
+  static const on_boarding_dec_1 = 'on_boarding_dec_1';
+  static const on_boarding_dec_2 = 'on_boarding_dec_2';
+  static const on_boarding_button_title = 'on_boarding_button_title';
+  static const choose_your_language = 'choose_your_language';
+  static const select = 'select';
+  static const arabic = 'arabic';
+  static const english = 'english';
 
 }

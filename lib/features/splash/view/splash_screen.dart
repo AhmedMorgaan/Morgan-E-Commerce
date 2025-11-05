@@ -3,11 +3,12 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:morgan_e_commerce/features/onboarding/view/on_boarding_screen.dart';
+import 'package:morgan_e_commerce/features/select_language/languages_selector_screen.dart';
 import 'package:morgan_e_commerce/resources/resources.dart';
 
 class SplashScreen extends StatefulWidget {
   static final route = "/splashScreen";
+
   const SplashScreen({super.key});
 
   @override
@@ -18,8 +19,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
-      context.replace(OnBoardingScreen.route);
+    Timer(Duration(seconds: 1), () {
+       context.replace(LanguageSelectorScreen.route);
     });
   }
 
@@ -29,11 +30,9 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SvgPicture.asset(SvgAssets.splashPlant),
-            ],
+          Align(
+            alignment: Alignment.topLeft,
+            child: SvgPicture.asset(SvgAssets.splashPlant),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -41,11 +40,11 @@ class _SplashScreenState extends State<SplashScreen> {
               SvgPicture.asset(SvgAssets.splashLogo),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SvgPicture.asset(SvgAssets.splashBottom),
-            ],
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: SvgPicture.asset(
+              SvgAssets.splashBottom,
+            ),
           ),
         ],
       ),

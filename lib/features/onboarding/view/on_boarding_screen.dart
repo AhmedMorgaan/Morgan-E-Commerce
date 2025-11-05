@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:morgan_e_commerce/core/config/constans/app_colors.dart';
 import 'package:morgan_e_commerce/core/shared/components/default_button.dart';
 import 'package:morgan_e_commerce/features/onboarding/model/on_boarding_item_model.dart';
 import 'package:morgan_e_commerce/features/onboarding/view/widget/on_boarding_page_item.dart';
+import 'package:morgan_e_commerce/generated/locale_keys.g.dart';
 import 'package:morgan_e_commerce/resources/resources.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
@@ -21,17 +23,17 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   final List<OnBoardingItemModel> onboardingData = [
     OnBoardingItemModel(
-      title: const TextSpan(
+      title: TextSpan(
         children: [
           TextSpan(
-            text: "Welcome to ",
-            style: TextStyle(
+            text: LocaleKeys.welcome_to.tr(),
+            style: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
           ),
-          TextSpan(
+          const TextSpan(
             text: "Fruit",
             style: TextStyle(
               fontSize: 24,
@@ -39,7 +41,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               color: AppColors.primaryColor,
             ),
           ),
-          TextSpan(
+          const TextSpan(
             text: "Hub",
             style: TextStyle(
               fontSize: 24,
@@ -49,22 +51,20 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           ),
         ],
       ),
-      description:
-          "Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and enjoy the best deals and top quality.",
+      description:LocaleKeys.on_boarding_dec_1.tr(),
       image: SvgAssets.onBoardingImage1,
       bgImage: SvgAssets.onBoardingBackgroundImage1,
     ),
     OnBoardingItemModel(
       title: TextSpan(
-        text: "Search and shop",
+        text: LocaleKeys.on_boarding_item_title_2.tr(),
         style: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.bold,
           color: Colors.black,
         ),
       ),
-      description:
-          "We bring you the finest carefully selected fruits. Check the details, photos, and reviews to make sure you choose the perfect fruit.",
+      description:LocaleKeys.on_boarding_dec_2.tr(),
       image: SvgAssets.onBoardingImage2,
       bgImage: SvgAssets.onBoardingBackgroundImage2,
     ),
@@ -116,7 +116,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 child: DefaultButton(
                   height: 60,
                   width: double.infinity,
-                  title: "Start Now",
+                  title: LocaleKeys.on_boarding_button_title.tr(),
                   onTap: () {},
                 ),
               ),
