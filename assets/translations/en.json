@@ -1,3 +1,11 @@
 {
-"welcome_to" : "Welcome to"
+  "welcome_to": "Welcome to ",
+  "on_boarding_item_title_2": "Search and shop",
+  "on_boarding_dec_1": "Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and enjoy the best deals and top quality.",
+  "on_boarding_dec_2": "We bring you the finest carefully selected fruits. Check the details, photos, and reviews to make sure you choose the perfect fruit.",
+  "on_boarding_button_title": "Get Started",
+  "choose_your_language": "Choose your language",
+  "select": "Select",
+  "arabic": "العربيه",
+  "english": "English"
 }

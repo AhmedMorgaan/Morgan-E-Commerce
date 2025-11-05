@@ -13,4 +13,5 @@ class SvgAssets {
   static const String splashBottom = 'assets/icons/splash_bottom.svg';
   static const String splashLogo = 'assets/icons/splash_logo.svg';
   static const String splashPlant = 'assets/icons/splash_plant.svg';
+  static const String selectedLang = 'assets/icons/selected_lang.svg';
 }

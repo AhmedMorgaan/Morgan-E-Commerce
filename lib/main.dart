@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:morgan_e_commerce/Services/local/hive_init.dart';
 import 'package:morgan_e_commerce/core/config/routes/app_routes.dart';
 import 'package:morgan_e_commerce/features/splash/view/splash_screen.dart';
 
@@ -12,7 +13,12 @@ Future<void> main() async {
   // Needs to be called so that we can await for EasyLocalization.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Initialize Easy Localization
   await EasyLocalization.ensureInitialized();
+
+  // Initialize Hive
+  await HiveInit.initializeHive();
+
   runApp(EasyLocalization(
       saveLocale: true,
       useOnlyLangCode: true,
