@@ -12,7 +12,7 @@ import 'package:morgan_e_commerce/generated/locale_keys.g.dart';
 import 'view/components/langauge_item.dart';
 
 class LanguageSelectorScreen extends StatefulWidget {
-  static const String route = "/language_selector_screen";
+  static const String routeName = "/language_selector_screen";
 
   const LanguageSelectorScreen({super.key});
 
@@ -89,7 +89,7 @@ class _LanguageSelectorScreenState extends State<LanguageSelectorScreen> {
                     onTap: () async {
                       printDone("Locale $selectedLocalLang");
                       printDone("Locale ${selectedLocalLang.languageCode}");
-                      context.go(OnBoardingScreen.route);
+                      context.go(OnBoardingScreen.routeName);
                       // context.setLocale(selectedLocalLang).then((value) async {
                       //   await ConfigLocalDatasource.setLanguageCode(
                       //     selectedLocalLang.languageCode,

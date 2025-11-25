@@ -7,7 +7,7 @@ import 'package:morgan_e_commerce/features/select_language/languages_selector_sc
 import 'package:morgan_e_commerce/resources/resources.dart';
 
 class SplashScreen extends StatefulWidget {
-  static final route = "/splashScreen";
+  static final routeName = "/splashScreen";
 
   const SplashScreen({super.key});
 
@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 1), () {
-       context.replace(LanguageSelectorScreen.route);
+       context.replace(LanguageSelectorScreen.routeName);
     });
   }
 
