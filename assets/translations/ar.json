@@ -8,5 +8,18 @@
   "choose_your_language": "إختار لغتك",
   "select": "اختيار",
   "arabic": "العربيه",
-  "english": "English"
+  "english": "English",
+  "required_field": "هذه الخانة مطلوبه",
+  "email_valid_msg": "ادخل بريد إلكتروني صالح",
+  "email_field_hint": "بريد إلكتروني",
+  "password_valid_msg": "يجب أن تحتوي كلمة المرور على 6 أحرف على",
+  "password_field_hint": "كلمة المرور",
+  "forgot_password": "نسيت كلمة المرور؟",
+  "login": "تسجيل دخول",
+  "donot_have_acc": "لا تمتلك حساب؟ ",
+  "create_one": "قم بإنشاء حساب",
+  "or": "أو",
+  "login_with_google": "تسجيل بواسطة جوجل",
+  "login_with_apple": "تسجيل بواسطة أبل",
+  "login_with_fb": "تسجيل بواسطة فيسبوك"
 }

@@ -8,5 +8,18 @@
   "choose_your_language": "Choose your language",
   "select": "Select",
   "arabic": "العربيه",
-  "english": "English"
+  "english": "English",
+  "required_field": "This field is required",
+  "email_valid_msg": "Enter a valid email",
+  "email_field_hint": "Email Address",
+  "password_valid_msg": "Password must be at least 6 characters",
+  "password_field_hint": "password",
+  "forgot_password": "Forgot your password?",
+  "login": "Login",
+  "donot_have_acc": "Don't have an account? ",
+  "create_one": "Create one.",
+  "or": "or",
+  "login_with_google": "Login with Google",
+  "login_with_apple": "Login with Apple",
+  "login_with_fb": "Login with Facebook"
 }

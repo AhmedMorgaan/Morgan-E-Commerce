@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
@@ -17,6 +18,7 @@ class DefaultScreen extends StatelessWidget {
     this.appBarColor,
     this.backArrowColor,
     this.bottomSheet,
+    this.withBackButton = true,
   });
 
   final String? title;
@@ -29,6 +31,7 @@ class DefaultScreen extends StatelessWidget {
   final Color? appBarColor;
   final Color? backArrowColor;
   final Widget? bottomSheet;
+  final bool withBackButton ;
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +40,26 @@ class DefaultScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: appBarColor ?? AppColors.white,
         elevation: 0,
-        leading: IconButton(
-          icon: SvgPicture.asset(
-            SvgAssets.backwardArrow,
-            matchTextDirection: true,
+        leadingWidth: 60,
+        leading: withBackButton ? Padding(
+          padding: const EdgeInsetsDirectional.only(start: 20.0),
+          child: Container(
+            height: 30,
+            width: 30,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+                border: Border.all(color: AppColors.coolGrey),),
+            child: IconButton(
+              icon: SvgPicture.asset(
+                SvgAssets.backwardArrow.tr(),
+                matchTextDirection: true,
+              ),
+              onPressed: () => context.pop(),
+            ),
           ),
-          onPressed: () => context.pop(),
-        ),
+        ) : null,
         title: appBarTitle,
+        centerTitle: true,
       ),
       body: SafeArea(
         child: SingleChildScrollView(

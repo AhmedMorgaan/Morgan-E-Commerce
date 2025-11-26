@@ -3,6 +3,7 @@ import 'package:morgan_e_commerce/core/config/constans/app_colors.dart';
 
 class DefaultButton extends StatelessWidget {
   final String title;
+  final double? titleSize;
   final void Function()? onTap;
   final EdgeInsetsGeometry? margin;
   final Color? backgroundColor;
@@ -33,6 +34,7 @@ class DefaultButton extends StatelessWidget {
     this.postfix,
     this.shadowColor,
     this.loaderColor,
+    this.titleSize,
   });
 
   @override
@@ -71,8 +73,8 @@ class DefaultButton extends StatelessWidget {
                   )
                 : Text(
                     title.toString(),
-                    style: TextStyle(
-                      fontSize: 14,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontSize:titleSize ?? 14,
                       fontWeight: FontWeight.w700,
                       color: titleColor ?? Colors.white,
                     ),

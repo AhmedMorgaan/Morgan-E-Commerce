@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:morgan_e_commerce/features/auth/view/login_screen.dart';
 import 'package:morgan_e_commerce/features/onboarding/view/on_boarding_screen.dart';
@@ -26,7 +25,7 @@ class AppRoutes {
         ),
         GoRoute(
           path: LoginScreen.routeName,
-          builder:(context, state) => const LoginScreen(),
+          builder:(context, state) =>  LoginScreen(),
         ),
       ]
   );

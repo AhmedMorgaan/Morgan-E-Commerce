@@ -13,5 +13,18 @@ abstract class  LocaleKeys {
   static const select = 'select';
   static const arabic = 'arabic';
   static const english = 'english';
+  static const required_field = 'required_field';
+  static const email_valid_msg = 'email_valid_msg';
+  static const email_field_hint = 'email_field_hint';
+  static const password_valid_msg = 'password_valid_msg';
+  static const password_field_hint = 'password_field_hint';
+  static const forgot_password = 'forgot_password';
+  static const login = 'login';
+  static const donot_have_acc = 'donot_have_acc';
+  static const create_one = 'create_one';
+  static const or = 'or';
+  static const login_with_google = 'login_with_google';
+  static const login_with_apple = 'login_with_apple';
+  static const login_with_fb = 'login_with_fb';
 
 }
