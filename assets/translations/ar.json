@@ -11,7 +11,7 @@
   "english": "English",
   "required_field": "هذه الخانة مطلوبه",
   "email_valid_msg": "ادخل بريد إلكتروني صالح",
-  "email_field_hint": "بريد إلكتروني",
+  "email_field_hint": "البريد الإلكتروني",
   "password_valid_msg": "يجب أن تحتوي كلمة المرور على 6 أحرف على",
   "password_field_hint": "كلمة المرور",
   "forgot_password": "نسيت كلمة المرور؟",
@@ -21,5 +21,13 @@
   "or": "أو",
   "login_with_google": "تسجيل بواسطة جوجل",
   "login_with_apple": "تسجيل بواسطة أبل",
-  "login_with_fb": "تسجيل بواسطة فيسبوك"
+  "login_with_fb": "تسجيل بواسطة فيسبوك",
+  "register_title": "حساب جديد",
+  "full_name": "الاسم كامل",
+  "name_valid_msg": "الاسم يجب أن يحتوي على حروف إنجليزية فقط",
+  "create_new_acc": "إنشاء حساب جديد",
+  "already_have_acc": "تمتلك حساب بالفعل؟ ",
+  "log_in": "تسجيل دخول",
+  "agree_terms_conditions_des": "من خلال إنشاء حساب ، فإنك توافق على ",
+  "agree_terms_conditions": "الشروط والأحكام الخاصة بنا"
 }

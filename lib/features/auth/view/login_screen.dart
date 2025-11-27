@@ -13,7 +13,6 @@ import 'package:morgan_e_commerce/resources/resources.dart';
 
 class LoginScreen extends StatefulWidget {
   static final routeName = "/loginScreen";
-
   const LoginScreen({super.key});
 
   @override
@@ -22,7 +21,6 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
-
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool isProtected = true;
@@ -30,15 +28,12 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultScreen(
-      appBarTitle: Text("Login"),
+      appBarTitle: Text(LocaleKeys.login.tr()),
       withBackButton: false,
       child: Form(
         key: _formKey,
         child: Column(
           children: [
-            SizedBox(
-              height: 20,
-            ),
             InputFieldWidget(
               controller: _emailController,
               validator: (value) {
@@ -71,6 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
               postFixIcon: IconButton(
                 icon: Icon(
                   isProtected ? Icons.visibility : Icons.visibility_off,
+                  color: AppColors.warmGrey,
                 ),
                 onPressed: () {
                   setState(() {
@@ -102,18 +98,17 @@ class _LoginScreenState extends State<LoginScreen> {
               titleSize: 16,
               width: double.infinity,
               borderRadius: 16,
-              height: 60,
               onTap: () {},
             ),
             SizedBox(
               height: 30,
             ),
-            RichText(
-                text: TextSpan(children: [
+            Text.rich(
+                TextSpan(children: [
               TextSpan(
                   text: LocaleKeys.donot_have_acc.tr(),
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      color: AppColors.darkGray,
+                      color: AppColors.warmGrey,
                       fontWeight: FontWeight.w600,
                       fontSize: 16)),
               TextSpan(
@@ -166,7 +161,6 @@ class _LoginScreenState extends State<LoginScreen> {
               titleSize: 16,
               width: double.infinity,
               borderRadius: 16,
-              height: 60,
               onTap: () {},
               prefix: SvgPicture.asset(
                 SvgAssets.googleIcon,
@@ -185,7 +179,6 @@ class _LoginScreenState extends State<LoginScreen> {
               titleSize: 16,
               width: double.infinity,
               borderRadius: 16,
-              height: 60,
               onTap: () {},
               prefix: SvgPicture.asset(
                 SvgAssets.appleIcon,
@@ -204,7 +197,6 @@ class _LoginScreenState extends State<LoginScreen> {
               titleSize: 16,
               width: double.infinity,
               borderRadius: 16,
-              height: 60,
               onTap: () {},
               prefix: SvgPicture.asset(
                 SvgAssets.fbIcon,

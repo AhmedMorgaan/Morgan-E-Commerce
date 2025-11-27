@@ -26,5 +26,13 @@ abstract class  LocaleKeys {
   static const login_with_google = 'login_with_google';
   static const login_with_apple = 'login_with_apple';
   static const login_with_fb = 'login_with_fb';
+  static const register_title = 'register_title';
+  static const full_name = 'full_name';
+  static const name_valid_msg = 'name_valid_msg';
+  static const create_new_acc = 'create_new_acc';
+  static const already_have_acc = 'already_have_acc';
+  static const log_in = 'log_in';
+  static const agree_terms_conditions_des = 'agree_terms_conditions_des';
+  static const agree_terms_conditions = 'agree_terms_conditions';
 
 }

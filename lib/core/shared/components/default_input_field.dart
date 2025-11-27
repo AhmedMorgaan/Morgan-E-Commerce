@@ -84,7 +84,7 @@ class InputFieldWidget extends StatelessWidget {
             ? BoxDecoration(
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(.25),
+                    color: Colors.black.withValues(alpha: .25),
                     blurRadius: 4,
                   ),
                 ],
@@ -189,7 +189,7 @@ class InputFieldWidget extends StatelessWidget {
                 prefixIconColor: AppColors.primaryColor,
                 suffixIconColor: AppColors.primaryColor,
                 hintStyle: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontSize: 14,
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
                   color: AppColors.warmGrey,
                 ),

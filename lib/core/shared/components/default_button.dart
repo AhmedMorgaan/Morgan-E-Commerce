@@ -42,7 +42,7 @@ class DefaultButton extends StatelessWidget {
     return InkWell(
       onTap: loading ? null : onTap,
       child: Container(
-        height: height ?? 50,
+        height: height ?? 55,
         width: width ?? 200,
         margin: margin,
         padding: const EdgeInsets.symmetric(horizontal: 16),

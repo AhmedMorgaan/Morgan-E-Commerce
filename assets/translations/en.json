@@ -21,5 +21,13 @@
   "or": "or",
   "login_with_google": "Login with Google",
   "login_with_apple": "Login with Apple",
-  "login_with_fb": "Login with Facebook"
+  "login_with_fb": "Login with Facebook",
+  "register_title": "New account",
+  "full_name": "Full Name",
+  "name_valid_msg": "Name can contain only English letters",
+  "create_new_acc": "Create a new account",
+  "already_have_acc": "Already have an account? ",
+  "log_in": "Log in",
+  "agree_terms_conditions_des": "By creating an account, you agree to ",
+  "agree_terms_conditions": "our terms and conditions."
 }

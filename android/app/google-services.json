@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "238832923264",
+    "project_id": "morgan-e-commerce",
+    "storage_bucket": "morgan-e-commerce.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238832923264:android:6f3057e5ba047560f92c65",
+        "android_client_info": {
+          "package_name": "com.example.morgan_e_commerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6tEHE7g6HsIoCTnU0gq9X9wWDiCjsc1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

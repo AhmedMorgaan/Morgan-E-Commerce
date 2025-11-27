@@ -51,7 +51,7 @@ class DefaultScreen extends StatelessWidget {
                 border: Border.all(color: AppColors.coolGrey),),
             child: IconButton(
               icon: SvgPicture.asset(
-                SvgAssets.backwardArrow.tr(),
+                SvgAssets.backwardArrow,
                 matchTextDirection: true,
               ),
               onPressed: () => context.pop(),
@@ -65,7 +65,7 @@ class DefaultScreen extends StatelessWidget {
         child: SingleChildScrollView(
           controller: scrollController,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
