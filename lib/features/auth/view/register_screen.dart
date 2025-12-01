@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:morgan_e_commerce/core/config/constans/app_colors.dart';
 import 'package:morgan_e_commerce/core/helper/toast_messages.dart';
 import 'package:morgan_e_commerce/core/shared/components/default_button.dart';
@@ -202,7 +203,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       text: LocaleKeys.log_in.tr(),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          printWarning("ssssssssssssssssssssss");
+                          context.pop();
                         },
                       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           color: AppColors.primaryColor,
