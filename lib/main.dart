@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:morgan_e_commerce/Services/di/service_locator.dart';
 import 'package:morgan_e_commerce/Services/local/hive_init.dart';
 import 'package:morgan_e_commerce/core/config/routes/app_routes.dart';
 import 'package:morgan_e_commerce/firebase_options.dart';
@@ -19,6 +20,9 @@ Future<void> main() async {
 
   // Initialize Hive
   await HiveInit.initializeHive();
+
+  // Initialize GetIt Service Locator
+  ServiceLocator.init();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

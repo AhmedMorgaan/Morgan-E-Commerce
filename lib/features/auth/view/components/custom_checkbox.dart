@@ -3,8 +3,9 @@ import 'package:morgan_e_commerce/core/config/constans/app_colors.dart';
 
 class CustomCheckbox extends StatelessWidget {
   final bool isChecked;
+  final bool isRequired;
   final ValueChanged <bool> onChanged;
-   const CustomCheckbox({super.key, required this.isChecked, required this.onChanged});
+   const CustomCheckbox({super.key, required this.isChecked, required this.onChanged, required this.isRequired});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class CustomCheckbox extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             side: BorderSide(
               width: 1.5,
-              color: isChecked ? AppColors.transparent : AppColors.grayScale
+              color: isRequired ? AppColors.red : isChecked ? AppColors.transparent : AppColors.grayScale
             )
           ),
         ),
