@@ -49,6 +49,8 @@ dependencies:
   get_it: ^9.1.1
   flutter_bloc: ^9.1.1
   fluttertoast: ^8.2.4
+  google_sign_in: ^6.3.0
+  flutter_facebook_auth: ^7.1.2
 
 
 dev_dependencies:

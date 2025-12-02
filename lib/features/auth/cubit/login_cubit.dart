@@ -18,4 +18,12 @@ class LoginCubit extends Cubit<BaseState> {
       (response) => emit(BaseLoaded(response: response)),
     );
   }
+  Future<void> loginWithGoogle() async {
+    emit(BaseLoading());
+    final result = await repo.signInWithGoogle();
+    result.fold(
+      (failure) => emit(BaseError(message: failure.errorMessage)),
+      (response) => emit(BaseLoaded(response: response)),
+    );
+  }
 }

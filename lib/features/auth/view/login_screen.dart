@@ -104,14 +104,13 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               BlocConsumer<LoginCubit, BaseState>(
                 listener: (context, state) {
-                  if(state is BaseError){
+                  if (state is BaseError) {
                     errorToast(state.message);
                   }
                   if (state is BaseLoaded) {
                     successToast("Login Successful");
                     // Navigate to the next screen or perform other actions
                   }
-
                 },
                 builder: (context, state) {
                   return DefaultButton(
@@ -122,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: 16,
                     onTap: () {
                       context.read<LoginCubit>().loginWithEmailAndPassword(
-                        UserLoginModel(
+                            UserLoginModel(
                               email: _emailController.text.trim(),
                               password: _passwordController.text.trim(),
                             ),
@@ -183,20 +182,27 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: 30,
               ),
-              DefaultButton(
-                title: LocaleKeys.login_with_google.tr(),
-                borderColor: AppColors.grayScale,
-                backgroundColor: AppColors.white,
-                titleColor: AppColors.black,
-                titleSize: 16,
-                width: double.infinity,
-                borderRadius: 16,
-                onTap: () {},
-                prefix: SvgPicture.asset(
-                  SvgAssets.googleIcon,
-                  width: 24,
-                  height: 24,
-                ),
+              BlocBuilder<LoginCubit, BaseState>(
+                builder: (context, state) {
+                  return DefaultButton(
+                    title: LocaleKeys.login_with_google.tr(),
+                    loading: state is BaseLoading,
+                    borderColor: AppColors.grayScale,
+                    backgroundColor: AppColors.white,
+                    titleColor: AppColors.black,
+                    titleSize: 16,
+                    width: double.infinity,
+                    borderRadius: 16,
+                    onTap: () {
+                      context.read<LoginCubit>().loginWithGoogle();
+                    },
+                    prefix: SvgPicture.asset(
+                      SvgAssets.googleIcon,
+                      width: 24,
+                      height: 24,
+                    ),
+                  );
+                },
               ),
               SizedBox(
                 height: 15,

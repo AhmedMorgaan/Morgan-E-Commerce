@@ -6,8 +6,11 @@ import 'package:morgan_e_commerce/features/auth/model/user_data_model.dart';
 abstract class AuthRepository {
   Future<Either<AppException, UserDataModel>> createUserWithEmailAndPassword(
       {required String email, required String password});
+
   Future<Either<AppException, UserDataModel>> signInWithEmailAndPassword(
       {required String email, required String password});
+
+  Future<Either<AppException, UserDataModel>> signInWithGoogle();
 }
 
 class AuthRepositoryImpl extends AuthRepository {
@@ -31,18 +34,28 @@ class AuthRepositoryImpl extends AuthRepository {
       return Left(AppException(errorMessage: e.toString()));
     }
   }
+
   @override
-  Future<Either<AppException,UserDataModel>> signInWithEmailAndPassword(
+  Future<Either<AppException, UserDataModel>> signInWithEmailAndPassword(
       {required String email, required String password}) async {
     try {
       final user = await firebaseAuthService.signInWithEmailAndPassword(
           email: email, password: password);
       return Right(UserDataModel(
-          id: user.uid,
-          email: user.email ?? "",
-          name: user.displayName ?? ""));
+          id: user.uid, email: user.email ?? "", name: user.displayName ?? ""));
     } on AppException catch (e) {
       return Left(AppException(errorMessage: e.errorMessage));
+    } catch (e) {
+      return Left(AppException(errorMessage: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<AppException, UserDataModel>> signInWithGoogle() async {
+    try {
+      final user = await firebaseAuthService.signInWithGoogle();
+      return Right(UserDataModel(
+          id: user.uid, email: user.email ?? "", name: user.displayName ?? ""));
     } catch (e) {
       return Left(AppException(errorMessage: e.toString()));
     }
