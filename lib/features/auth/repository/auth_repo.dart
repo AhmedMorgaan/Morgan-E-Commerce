@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:morgan_e_commerce/Services/firebase_auth/FirebaseAuthService.dart';
 import 'package:morgan_e_commerce/core/utils/app_exceptions.dart';
+import 'package:morgan_e_commerce/core/utils/debug_prints.dart';
 import 'package:morgan_e_commerce/features/auth/model/user_data_model.dart';
 
 abstract class AuthRepository {
@@ -11,6 +12,8 @@ abstract class AuthRepository {
       {required String email, required String password});
 
   Future<Either<AppException, UserDataModel>> signInWithGoogle();
+
+  Future<Either<AppException, UserDataModel>> signInWithFacebook();
 }
 
 class AuthRepositoryImpl extends AuthRepository {
@@ -57,6 +60,18 @@ class AuthRepositoryImpl extends AuthRepository {
       return Right(UserDataModel(
           id: user.uid, email: user.email ?? "", name: user.displayName ?? ""));
     } catch (e) {
+      return Left(AppException(errorMessage: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<AppException, UserDataModel>> signInWithFacebook() async {
+    try {
+      final user = await firebaseAuthService.signInWithFacebook();
+      return Right(UserDataModel(
+          id: user.uid, email: user.email ?? "", name: user.displayName ?? ""));
+    } catch (e) {
+      printError("Facebook Sign-In Error: ${e.toString()}");
       return Left(AppException(errorMessage: e.toString()));
     }
   }

@@ -225,20 +225,27 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: 15,
               ),
-              DefaultButton(
-                title: LocaleKeys.login_with_fb.tr(),
-                borderColor: AppColors.grayScale,
-                backgroundColor: AppColors.white,
-                titleColor: AppColors.black,
-                titleSize: 16,
-                width: double.infinity,
-                borderRadius: 16,
-                onTap: () {},
-                prefix: SvgPicture.asset(
-                  SvgAssets.fbIcon,
-                  width: 24,
-                  height: 24,
-                ),
+              BlocBuilder<LoginCubit, BaseState>(
+                builder: (context, state) {
+                  return DefaultButton(
+                    title: LocaleKeys.login_with_fb.tr(),
+                    loading: state is BaseLoading,
+                    borderColor: AppColors.grayScale,
+                    backgroundColor: AppColors.white,
+                    titleColor: AppColors.black,
+                    titleSize: 16,
+                    width: double.infinity,
+                    borderRadius: 16,
+                    onTap: () {
+                      context.read<LoginCubit>().loginWithFacebook();
+                    },
+                    prefix: SvgPicture.asset(
+                      SvgAssets.fbIcon,
+                      width: 24,
+                      height: 24,
+                    ),
+                  );
+                },
               ),
             ],
           ),
