@@ -14,4 +14,8 @@ class SvgAssets {
   static const String splashLogo = 'assets/icons/splash_logo.svg';
   static const String splashPlant = 'assets/icons/splash_plant.svg';
   static const String selectedLang = 'assets/icons/selected_lang.svg';
+  static const String backwardArrow = 'assets/icons/backward_arrow.svg';
+  static const String googleIcon = 'assets/icons/google_icon.svg';
+  static const String appleIcon = 'assets/icons/apple_icon.svg';
+  static const String fbIcon = 'assets/icons/fb_icon.svg';
 }

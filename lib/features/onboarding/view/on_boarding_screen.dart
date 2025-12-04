@@ -1,7 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:morgan_e_commerce/Services/local/config_local_datasource.dart';
 import 'package:morgan_e_commerce/core/config/constans/app_colors.dart';
 import 'package:morgan_e_commerce/core/shared/components/default_button.dart';
+import 'package:morgan_e_commerce/features/auth/view/login_screen.dart';
 import 'package:morgan_e_commerce/features/onboarding/model/on_boarding_item_model.dart';
 import 'package:morgan_e_commerce/features/onboarding/view/widget/on_boarding_page_item.dart';
 import 'package:morgan_e_commerce/generated/locale_keys.g.dart';
@@ -9,7 +12,7 @@ import 'package:morgan_e_commerce/resources/resources.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
 class OnBoardingScreen extends StatefulWidget {
-  static const String route = "/onBoardingScreen";
+  static const String routeName = "/onBoardingScreen";
 
   const OnBoardingScreen({super.key});
 
@@ -116,8 +119,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 child: DefaultButton(
                   height: 60,
                   width: double.infinity,
-                  title: LocaleKeys.on_boarding_button_title.tr(),
-                  onTap: () {},
+                  title: LocaleKeys.get_started.tr(),
+                  onTap: () {
+                    ConfigLocalDatasource.setIsFirstOpen(false);
+                    context.go(LoginScreen.routeName);
+                  },
                 ),
               ),
             ),

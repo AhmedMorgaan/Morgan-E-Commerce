@@ -4,11 +4,19 @@ import 'package:flutter/material.dart';
 
 class AppColors {
 
+  static const primaryColor = Color(0xff1B5E37);
+  static const greyishBrown = Color(0xff555555);
+  static const greyishBrown2 = Color(0x80555555);
+  static const warmGrey = Color(0xff999999);
+  static const  grayScale = Color(0xFFE6E9EA);
+  static const  semiGray = Color(0xFFF9FAFA);
+  static const  semiGreen = Color(0xFF2D9F5D);
+  static const  darkGray = Color(0xFF616A6B);
+
+
 
   static const transparent = Color(0x00000000);
-  static const primaryColor = Color(0xff1B5E37);
   static const secondaryColor = Color(0xffffffff);
-  static const  grayScale = Color(0xFF4E5556);
   static const dark = Color(0xff0C0D0D);
   static const darkTwo = Color(0xff1e293b);
   static const darkBlueGrey = Color(0xff1b163f);
@@ -43,11 +51,13 @@ class AppColors {
   static const whiteGray = Color(0xffE4E5E9);
   static const blueWhite = Color(0xffe4f1fa);
   static const black = Color(0xff1a1a1a);
-  static const semiGreen = Color(0xff91b956);
   static const blue = Color(0xff253c7f);
   static const greenGray = Color(0xffe8f4d3);
   static const gray = Color(0xff4c4c4c);
   static const acceptedColor = Color(0xff00c950);
   static const orange = Color(0xffF4A91F);
   static const cancelledColor = Color(0xfffb2c36);
+
+
+
 }

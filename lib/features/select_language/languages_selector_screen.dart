@@ -5,6 +5,7 @@ import 'package:morgan_e_commerce/Services/local/config_local_datasource.dart';
 import 'package:morgan_e_commerce/core/config/constans/app_colors.dart';
 import 'package:morgan_e_commerce/core/shared/components/default_button.dart';
 import 'package:morgan_e_commerce/core/utils/debug_prints.dart';
+import 'package:morgan_e_commerce/features/auth/view/login_screen.dart';
 import 'package:morgan_e_commerce/features/onboarding/view/on_boarding_screen.dart';
 import 'package:morgan_e_commerce/features/select_language/model/langunage_item_model.dart';
 import 'package:morgan_e_commerce/generated/locale_keys.g.dart';
@@ -12,7 +13,7 @@ import 'package:morgan_e_commerce/generated/locale_keys.g.dart';
 import 'view/components/langauge_item.dart';
 
 class LanguageSelectorScreen extends StatefulWidget {
-  static const String route = "/language_selector_screen";
+  static const String routeName = "/language_selector_screen";
 
   const LanguageSelectorScreen({super.key});
 
@@ -89,7 +90,14 @@ class _LanguageSelectorScreenState extends State<LanguageSelectorScreen> {
                     onTap: () async {
                       printDone("Locale $selectedLocalLang");
                       printDone("Locale ${selectedLocalLang.languageCode}");
-                      context.go(OnBoardingScreen.route);
+                      final isFirstOpen =
+                          ConfigLocalDatasource.getIsFirstOpen();
+                      if (isFirstOpen) {
+                        context.go(OnBoardingScreen.routeName);
+                      } else {
+                        context.go(LoginScreen.routeName);
+                      }
+
                       // context.setLocale(selectedLocalLang).then((value) async {
                       //   await ConfigLocalDatasource.setLanguageCode(
                       //     selectedLocalLang.languageCode,

@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "238832923264",
+    "project_id": "morgan-e-commerce",
+    "storage_bucket": "morgan-e-commerce.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238832923264:android:6f3057e5ba047560f92c65",
+        "android_client_info": {
+          "package_name": "com.example.morgan_e_commerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238832923264-bht61mftudvqblon5dojtrb2ethk1dmt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.morgan_e_commerce",
+            "certificate_hash": "53e4f1178d47e7a5a324ac63178258aed063acf4"
+          }
+        },
+        {
+          "client_id": "238832923264-tvcglefevrnst2itbmdibub0uupqjird.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6tEHE7g6HsIoCTnU0gq9X9wWDiCjsc1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238832923264-tvcglefevrnst2itbmdibub0uupqjird.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "238832923264-l5o6ao03986tfh1of9um5hlbtlhf8ugk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.morganECommerce"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

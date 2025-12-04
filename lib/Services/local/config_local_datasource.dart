@@ -11,4 +11,14 @@ class ConfigLocalDatasource {
     return Hive.box(LocalDataSourceBoxes.configBox)
         .get(LocalDataSourceKeys.langCode, defaultValue: "en");
   }
+
+  static Future<void> setIsFirstOpen(bool isFirstOpen) async {
+    await Hive.box(LocalDataSourceBoxes.configBox)
+        .put(LocalDataSourceKeys.isFirstOpen, isFirstOpen);
+  }
+
+  static bool getIsFirstOpen() {
+    return Hive.box(LocalDataSourceBoxes.configBox)
+        .get(LocalDataSourceKeys.isFirstOpen, defaultValue: true);
+  }
 }
