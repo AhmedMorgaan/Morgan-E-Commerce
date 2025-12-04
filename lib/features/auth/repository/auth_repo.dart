@@ -39,9 +39,7 @@ class AuthRepositoryImpl extends AuthRepository {
           email: model.email, password: model.password);
 
       final userData = UserDataModel(
-          id: user?.uid ?? "",
-          email: model.email ?? "",
-          name: model.name ?? "");
+          id: user?.uid ?? "", email: model.email, name: model.name);
 
       addUserData(userData);
 
@@ -63,9 +61,7 @@ class AuthRepositoryImpl extends AuthRepository {
           email: email, password: password);
 
       final userData = UserDataModel(
-          id: user.uid ?? "",
-          email: user.email ?? "",
-          name: user.displayName ?? "");
+          id: user.uid, email: user.email ?? "", name: user.displayName ?? "");
 
       AuthLocalDataSource.setUserData(userData.toJson());
 
@@ -83,9 +79,7 @@ class AuthRepositoryImpl extends AuthRepository {
       final user = await firebaseAuthService.signInWithGoogle();
 
       final userData = UserDataModel(
-          id: user.uid ?? "",
-          email: user.email ?? "",
-          name: user.displayName ?? "");
+          id: user.uid, email: user.email ?? "", name: user.displayName ?? "");
 
       if (!await isUserExist(user.uid)) {
         addUserData(userData);
@@ -104,9 +98,7 @@ class AuthRepositoryImpl extends AuthRepository {
       final user = await firebaseAuthService.signInWithFacebook();
 
       final userData = UserDataModel(
-          id: user.uid ?? "",
-          email: user.email ?? "",
-          name: user.displayName ?? "");
+          id: user.uid, email: user.email ?? "", name: user.displayName ?? "");
 
       if (!await isUserExist(user.uid)) {
         addUserData(userData);
