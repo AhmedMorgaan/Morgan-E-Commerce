@@ -21,12 +21,11 @@ Future<void> main() async {
   // Initialize Hive
   await HiveInit.initializeHive();
 
-  // Initialize GetIt Service Locator
-  ServiceLocator.init();
-
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // Initialize GetIt Service Locator
+  ServiceLocator.init();
 
   runApp(EasyLocalization(
       saveLocale: true,

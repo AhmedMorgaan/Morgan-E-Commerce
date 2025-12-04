@@ -51,6 +51,7 @@ dependencies:
   fluttertoast: ^8.2.4
   google_sign_in: ^6.3.0
   flutter_facebook_auth: ^7.1.2
+  cloud_firestore: ^6.1.0
 
 
 dev_dependencies:

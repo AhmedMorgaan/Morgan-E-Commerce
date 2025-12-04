@@ -14,11 +14,12 @@ import 'package:morgan_e_commerce/core/utils/validators.dart';
 import 'package:morgan_e_commerce/features/auth/cubit/login_cubit.dart';
 import 'package:morgan_e_commerce/features/auth/model/user_login_model.dart';
 import 'package:morgan_e_commerce/features/auth/view/register_screen.dart';
+import 'package:morgan_e_commerce/features/home/view/home_screen.dart';
 import 'package:morgan_e_commerce/generated/locale_keys.g.dart';
 import 'package:morgan_e_commerce/resources/resources.dart';
 
 class LoginScreen extends StatefulWidget {
-  static final routeName = "/loginScreen";
+  static const String routeName = "/loginScreen";
 
   const LoginScreen({super.key});
 
@@ -109,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   }
                   if (state is BaseLoaded) {
                     successToast("Login Successful");
-                    // Navigate to the next screen or perform other actions
+                    context.go(HomeScreen.routeName);
                   }
                 },
                 builder: (context, state) {
@@ -186,7 +187,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 builder: (context, state) {
                   return DefaultButton(
                     title: LocaleKeys.login_with_google.tr(),
-                    loading: state is BaseLoading,
+                    loading: state is GoogleLoading,
+                    loaderColor: AppColors.primaryColor,
                     borderColor: AppColors.grayScale,
                     backgroundColor: AppColors.white,
                     titleColor: AppColors.black,
@@ -209,6 +211,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               DefaultButton(
                 title: LocaleKeys.login_with_apple.tr(),
+                loaderColor: AppColors.primaryColor,
                 borderColor: AppColors.grayScale,
                 backgroundColor: AppColors.white,
                 titleColor: AppColors.black,
@@ -229,7 +232,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 builder: (context, state) {
                   return DefaultButton(
                     title: LocaleKeys.login_with_fb.tr(),
-                    loading: state is BaseLoading,
+                    loading: state is FBLoading,
+                    loaderColor: AppColors.primaryColor,
                     borderColor: AppColors.grayScale,
                     backgroundColor: AppColors.white,
                     titleColor: AppColors.black,

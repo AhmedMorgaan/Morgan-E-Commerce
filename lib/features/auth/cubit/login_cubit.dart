@@ -19,7 +19,7 @@ class LoginCubit extends Cubit<BaseState> {
     );
   }
   Future<void> loginWithGoogle() async {
-    emit(BaseLoading());
+    emit(GoogleLoading());
     final result = await repo.signInWithGoogle();
     result.fold(
       (failure) => emit(BaseError(message: failure.errorMessage)),
@@ -27,7 +27,7 @@ class LoginCubit extends Cubit<BaseState> {
     );
   }
   Future<void> loginWithFacebook() async {
-    emit(BaseLoading());
+    emit(FBLoading());
     final result = await repo.signInWithFacebook();
     result.fold(
           (failure) => emit(BaseError(message: failure.errorMessage)),
@@ -35,3 +35,7 @@ class LoginCubit extends Cubit<BaseState> {
     );
   }
 }
+
+class LoginLoading extends BaseState {}
+class GoogleLoading extends BaseState {}
+class FBLoading extends BaseState {}

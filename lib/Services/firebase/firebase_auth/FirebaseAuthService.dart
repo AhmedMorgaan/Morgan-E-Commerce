@@ -80,4 +80,17 @@ class FirebaseAuthService {
     // Once signed in, return the UserCredential
     return (await FirebaseAuth.instance.signInWithCredential(facebookAuthCredential)).user!;
   }
-}
+
+  Future<void> userDelete() async {
+    try {
+      User? user = FirebaseAuth.instance.currentUser;
+      if(user != null){
+        await user.delete();
+      }
+    } on FirebaseAuthException catch (e) {
+      throw AppException(errorMessage: e.message ?? 'An unknown error occurred while deleting the user.');
+    } catch (e) {
+      throw AppException(errorMessage: 'An unknown error occurred while deleting the user.');
+    }
+  }
+ }

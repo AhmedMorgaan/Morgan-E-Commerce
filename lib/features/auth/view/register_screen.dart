@@ -160,6 +160,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     }
                     if (state is BaseLoaded) {
                       successToast("Registered Successfully");
+                      context.pop();
                     }
                   },
                   builder: (context, state) {

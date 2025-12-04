@@ -11,8 +11,7 @@ class RegisterCubit extends Cubit<BaseState> {
   // Implementation of the RegisterCubit
   Future<void> registerUserWithEmailAndPassword(RegisterModel model) async {
     emit(BaseLoading());
-    final result = await repo.createUserWithEmailAndPassword(
-        email: model.email, password: model.password);
+    final result = await repo.createUserWithEmailAndPassword(model: model);
     result.fold(
       (failure) => emit(BaseError(message: failure.errorMessage)),
       (response) => emit(BaseLoaded(response: response)),
